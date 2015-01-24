@@ -5,13 +5,13 @@ require "hashie"
 require "omniauth-google-oauth2"
 require "delegate"
 
-# active_support libs
+# active_support
 require 'active_support/core_ext/module/delegation'
 
 # version
 require "noxy/version"
 
-# Configuration
+# configuration
 require "noxy/options"
 require "noxy/configuration"
 
@@ -25,13 +25,17 @@ module Noxy
 
   extend self
 
+  # Make module configurable
+  # @param [block] accepts a optional block
+  # @return []
+
   def configure
     block_given? ? yield(Noxy::Configuration) : Noxy::Configuration
   end
 
 
   # Delegate all public
-  # instance methods from Configuration
+  # instance methods from Configuration to Noxy
 
   delegate(*(
     Noxy::Configuration.public_instance_methods(false) <<

@@ -16,8 +16,8 @@ module Noxy
       # Noxy
       app.set :noxy, Proc.new { Noxy }
 
-      # Create a session cookie: here store
-      # auth data securely accros domains.
+      # Create a session cookie: store
+      # auth data securely accross multiple domains.
 
       app.use Rack::Session::Cookie,
               key: "#{app.noxy.app}.noxy.session",
