@@ -55,6 +55,12 @@ By default the following routes are defined:
 Both are needed for handling the callback from Google.
 When the callback from Google is completed the `Noxy.proxy` will be called.
 
+## Todo
+
+  * Make path in cookie configurable (./lib/noxy/sinatra.rb)
+  * Clean up test / example Sinatra app for push
+  * Write more specs.
+
 ## Contributing
 
 1. Fork it ( https://git.noxqsapp.nl/dknl/noxy/fork )
