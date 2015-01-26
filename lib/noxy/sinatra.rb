@@ -4,7 +4,13 @@ module Noxy
   module Auth
 
     # helpers
-    module Helpers; end
+    module Helpers
+
+      def authorization
+        request.env['omniauth.auth']
+      end
+
+    end
 
     # After register callback when Noxy
     # is embedded in a Sinatra app.

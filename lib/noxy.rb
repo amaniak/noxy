@@ -6,7 +6,7 @@ require "omniauth-google-oauth2"
 require "delegate"
 
 # active_support
-require 'active_support/core_ext/module/delegation'
+require "active_support/core_ext/module/delegation"
 
 # version
 require "noxy/version"
@@ -25,6 +25,14 @@ module Noxy
 
   extend self
 
+  # Logging for module
+  # @param body [String] String to send to logger.
+
+  def self.log(body)
+    @logger ||= Logger.new(STDOUT)
+    @logger.debug "[Noxy]: #{body}"
+  end
+
   # Make module configurable
   # @param [block] accepts a optional block
   # @return []
@@ -32,7 +40,6 @@ module Noxy
   def configure
     block_given? ? yield(Noxy::Configuration) : Noxy::Configuration
   end
-
 
   # Delegate all public
   # instance methods from Configuration to Noxy
