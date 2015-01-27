@@ -42,8 +42,9 @@ Configure Noxy from a Sinara app.
       ...
       noxy.app   = "DogSmash"
       noxy.proxy = -> {
-        auth = request.env['omniauth.auth']
-        check(auth.info.email)
+
+        # authorization hash is available.
+        authorization.info.email
       }
     end
 
@@ -55,11 +56,14 @@ By default the following routes are defined:
 Both are needed for handling the callback from Google.
 When the callback from Google is completed the `Noxy.proxy` will be called.
 
-## Todo
+## Todo (3.1.2)
 
   * Make path in cookie configurable (./lib/noxy/sinatra.rb)
   * Clean up test / example Sinatra app for push
   * Write more specs.
+
+  * Make secreat / client_id readable from custom location
+    ,i.e: ~/.secure/app/.
 
 ## Contributing
 
