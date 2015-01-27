@@ -7,7 +7,7 @@ module Noxy
     module Helpers
 
       def authorized?
-        !session['authorized']
+        session['noxy.authorized']
       end
 
       def authorization
