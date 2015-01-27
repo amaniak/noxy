@@ -6,6 +6,10 @@ module Noxy
     # helpers
     module Helpers
 
+      def authorized?
+        !session['authorized']
+      end
+
       def authorization
         request.env['omniauth.auth']
       end
