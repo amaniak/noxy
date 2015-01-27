@@ -27,7 +27,7 @@ Pre-Configure Noxy:
       option.client  = "foo"
       option.secret  = "bar20oo0)"
       option.session = "some.shared.common.secret"
-      option.proxy   = -> { check(request.env['omniauth.auth'])}
+      option.proxy   = -> { check(authorization)}
     end
 
 Add Noxy to a Sinara app.
@@ -48,6 +48,28 @@ Configure Noxy from a Sinara app.
       }
     end
 
+Following helpers available
+
+    class Foo < Sinatra::Base
+      ...
+      before do
+        unless authorized?
+          halt 401
+        end
+      end
+
+
+      get "/hit" do
+        "Hit the dog"
+      end
+    end
+
+
+To redirect to Google Auth page, visit this link
+
+    a href=("/auth/google_oauth2") Inloggen
+
+
 By default the following routes are defined:
 
     [GET]  /auth/google_oauth2/callback
@@ -55,6 +77,8 @@ By default the following routes are defined:
 
 Both are needed for handling the callback from Google.
 When the callback from Google is completed the `Noxy.proxy` will be called.
+
+
 
 ## Todo (3.1.2)
 
