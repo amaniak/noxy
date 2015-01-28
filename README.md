@@ -20,7 +20,8 @@ Or install it yourself as:
 
 ## Usage
 
-**WARNING:** You must enable Google Contacts API and Google Plus API when creating client, https://console.developers.google.com
+**WARNING:** You must enable Google Contacts API and Google Plus API when creating client, https://console.developers.google.com.
+
 
 Pre-Configure Noxy:
 
