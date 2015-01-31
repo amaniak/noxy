@@ -9,10 +9,10 @@ Gem::Specification.new do |gem|
   gem.name          = "noxy"
   gem.version       = Noxy::VERSION
   gem.authors       = ["DK"]
-  gem.email         = ["amaniak@noxqs.nl"]
+  gem.email         = ["amaniak@nutshell.nl"]
   gem.summary       = %q{Google Apps domain authentication}
   gem.description   = %q{Basic support for Google Apps authentication}
-  gem.homepage      = "http://noxqs.nl"
+  gem.homepage      = "https://github.com/amaniak/noxy"
   gem.license       = "MIT"
 
 
